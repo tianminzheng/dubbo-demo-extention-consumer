@@ -1,0 +1,50 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.jiker.demo</groupId>
+    <artifactId>dubbo-demo</artifactId>
+    <version>0.0.1-snapshot</version>
+    <packaging>pom</packaging>
+    <name>dubbo-demo</name>
+    <description>The demo module of dubbo project</description>
+
+	<properties>
+        <demo-version>0.0.1-snapshot</demo-version>
+    </properties>
+
+    <modules>
+        <module>dubbo-demo-interface</module>
+		<module>dubbo-demo-original</module>	
+		<module>dubbo-demo-echo</module>
+		<module>dubbo-demo-async</module>	
+		<module>dubbo-demo-generic</module>	
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>3.0.7</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
